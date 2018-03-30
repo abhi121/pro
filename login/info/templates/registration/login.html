@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>User-Login</title>
+</head>
+<body>
+<h1>User Login</h1>
+
+{% if is_registered %}
+  <script>alert("You Are Registered with username:{{user_obj.username}}")</script>
+
+  {% else %}
+  <form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+     {{form}}
+     <input type="submit" value="Submit">
+   </form>
+{% endif %}
+
+
+
+
+
+</body>
+</html>
